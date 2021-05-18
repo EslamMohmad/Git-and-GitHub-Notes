@@ -1,0 +1,213 @@
+cd => chane director
+../ => get out from current direction
+dir name/ => to enter the direction
+-------------------------------------
+mkdir ==> make direction in current path
+ex: mkdir file1 file2 "file 3" ....
+-------------------------------------
+mv => to move direction to anthor path or rename 
+ex: mv css css2 
+if css2 is exist css file will be moved
+or not css change name to css2
+--------------------------------------
+cp => to copy file 
+ex: cp -r css css2
+-r => copy all files inside css folder
+-------------------------------------
+rm => remove file 
+ex: rm -r css
+-r => remove folder and all files inside that folder
+ex: rm -d css
+-d => remove folder that is empty
+-------------------------------------
+echo => to create any type of files
+echo > index.html
+echo "eslam" > index.txt ( ">" overwrite)
+=> create file his content is "eslam"
+
+touch => create any type of files
+touch text.md
+-------------------------------------
+cat => to concat content of files in anthor file
+=> show content of file
+-------------------------------------
+grep => use for search text in all files 
+ex:
+d:\PROJECTS\Locker\newProject\info
+? grep eslam -r
+one.txt:eslam
+three.txt:eslam
+two.txt:esla
+-------------------------------------
+file => to know type of director
+files index.html
+index.html: HTML document, ASCII text, with CRLF line terminators
+
+file *
+all director
+-------------------------------------
+tree => to see structure of file
+tree project
+css
+js
+plagin
+-------------------------------------
+tasklist => to see task manager in cmd
+-------------------------------------
+e. files name => to explorer file
+-------------------------------------
+alias => use for make shorthand code
+ex: alias es=eslam
+-------------------------------------
+ping => check if page is working or not
+ex: ping google.co.eg
+-------------------------------------
+ipconfig => to check setting of my network
+-------------------------------------
+git clone => use to download github files
+git clone https://github.com/eslam1998-dev/firstProject.git
+
+git add => to add files to staging area
+git add files name or *
+
+git reset head file name => to back file from staging area to working area
+git reset head index.html
+
+git status => to see status of files
+git status
+
+git commit -m => to send all files to local repository
+-m to set message
+
+git config --global -l ==> configruation list
+git config --global user.name
+git config --global user.email
+
+git push (remote repo) (local repo) => to upload all your changes to remote repo
+
+git pull (remote repo) => to get new changes from remote repo
+
+{if the push command isn't working so you must pull all changes from remote repo and push again}
+-------------------------------------
+to make special key for github account
+ssh-keygen -t rsa -b 4096 -C "name@test.com"
+ssh: 	secure shield
+keygen: key generator
+-t : 	algorithm type
+rsa: 	type of algorithm is (rsa)
+-b :	the number of bits (4096)
+-C :	email "name@test.com"
+
+to open your special key
+ssh -T git@github.com
+and enter your public key
+-------------------------------------
+to upload your files project to github
+git init 
+git add *
+git commit -m "message"
+git remote add origin (link of repo)
+git push -u origin master --force
+-------------------------------------
+you must rename your branch name
+git branch -m (name)
+git branch -m main 
+-------------------------------------
+to make shorthand command 
+git config --gloabl alias.(shorthand command) command
+git config --global alias.st status
+git config --global alias.cm "commit -m"
+-------------------------------------
+to create new branch
+git branch (name)
+to see all own branches
+git branch
+to switch between branches
+git checkout (name)
+to delete branch {you must getout from this branch and switch to another}
+git branch -d (name) {-d if there was changes not marged the branch will not delete} {-D force delete}
+to create branch and switch to 
+git checkout -b (name)
+to rename branch
+git branch -m (new name)
+to merge sub branch to main branch 
+git merge (name of main branch)
+-------------------------------------
+set files that didn't finish to stash {before commit files and push}
+git stach
+to see stach list
+git stash list
+to get files from stash and delete the stash
+git stash pop {or} git stash pop id
+git stash pop {last one}
+git stash pop stash@{index}
+to get files from stash and let stash without delete
+git stash apply {or} git stash apply id
+git stash apply {last one}
+git stash apply stash@{index}
+to see what inside stash
+git stash show {or} git stash show id
+git stash show {last one}
+git stash show stash@{index}
+to set message to stash 
+git stash save "{message}"
+to delete stash 
+git stash drop or git stash drop id
+to clear all stash 
+git stash clear
+------------------------------------
+to un stage file
+git restore --staged {file name}
+git restore --staged *
+to get files list before remove 
+git clean -n
+to delete files 
+git clean -f
+------------------------------------
+to delete file from remote repo
+git reset --hard {hash number}
+git log 
+=>	commit f6a17a80d3fc56e3c465e04ea28431af84db7865 (HEAD -> main, origin/main)
+	Author: eslam1998-dev <eslam1998-dev>
+	Date:   Tue May 18 09:01:29 2021 +0200
+	three
+
+	commit 6fb05a531ab0c1fed40452cefc30a169a15cd8cc
+	Author: eslam1998-dev <eslam1998-dev>
+	Date:   Tue May 18 09:01:07 2021 +0200
+    	two
+
+	commit 6636d1e21957c584f0a08e41461c38eb3de4d5b5
+	Author: eslam1998-dev <eslam1998-dev>
+	Date:   Tue May 18 09:00:32 2021 +0200
+    	one
+
+	commit 6036483df30e7b6e3bbe70645b7e85d3a0f7e0d4
+	Author: eslam1998-dev <eslam1998-dev>
+	Date:   Tue May 18 08:53:31 2021 +0200
+    	the bad commit
+
+	commit 17b5ed3195747e734d9b5ccd8480e3ed04462977
+	Author: eslam1998-dev <eslam1998-dev>
+	Date:   Tue May 18 08:43:41 2021 +0200
+	the good commit
+
+git reset --hard 6636d1e21957c584f0a08e41461c38eb3de4d5b5 ==> {one}
+git push origin main --force
+------------------------------------
+to make versions for your project
+to get list of your tag
+git tag 
+git tag -l
+git tag -l "v1.*"
+to create tag
+git tag {tag name}
+to push your tag 
+git push origin {tag name}
+to set new tag 
+git tag -a {tag name} -m "message"
+to delete tag 
+git push origin --delete {tag name}
+git push origin -d {tag name}
+------------------------------------
+
